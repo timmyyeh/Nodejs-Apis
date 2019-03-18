@@ -8,7 +8,8 @@ import { getItems, deleteItem } from '../actions/itemActions';
 class ShoppingList extends Component {
 
     componentDidMount() {
-        console.log(this.props)
+        this.props.getItems();
+
     }
 
     onDeleteClick = (id) => {
@@ -17,10 +18,12 @@ class ShoppingList extends Component {
 
     render() {
         const { items } = this.props.item
+        console.log(items);
         return (
             <Container>
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
+                    
                         {items.map(({id, name}) => (
                             <CSSTransition key={id} timeout={500} classNames="fade">
                                 <ListGroupItem>
