@@ -17,7 +17,6 @@ route.post('/', (req, res) => {
     });
 
     newItem.save().then(item => res.json({
-        'success': true,
         'item': item
     }));
 });

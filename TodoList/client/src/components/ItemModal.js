@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 import { addItem } from '../actions/itemActions';
-import uuid from 'uuid';
 
 class ItemModal extends Component {
     state = {
@@ -21,7 +20,6 @@ class ItemModal extends Component {
         console.log('hi');
         e.preventDefault();
         const newItem = {
-            id: uuid(),
             name: this.state.name
         }
         this.props.addItem(newItem);

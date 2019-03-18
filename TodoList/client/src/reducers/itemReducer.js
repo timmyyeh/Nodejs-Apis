@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
         case ADD_ITEMS:
             return {
                 ...state,
-                items: [...state.items, action.payload]
+                items: [...state.items, action.payload.item]
             }
         case ITEMS_LOADING:
             return {
