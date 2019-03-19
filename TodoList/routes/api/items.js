@@ -24,7 +24,7 @@ route.post('/', (req, res) => {
 // @Route DELETE api/items
 route.delete('/:id', (req, res) => {
     Item.findById(req.params.id)
-        .then(item => item.remove().then(() => res.json({success: true})))
+        .then(item => item.remove().then(() => res.json({'id': item._id})))
         .catch(err => res.status(404).json({success: false}));
 })
 

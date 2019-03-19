@@ -17,8 +17,6 @@ class ShoppingList extends Component {
 
     render() {
         const { items } = this.props.item
-        console.log('updating');
-        console.log(items);
         return (
             <Container>
                 <ListGroup>
