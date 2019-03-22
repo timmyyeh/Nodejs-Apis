@@ -1,17 +1,18 @@
 const route = require('express').Router();
+const auth = require('../../middleware/auth');
 
 // Item Model
 const Item = require('../../models/item');
 
 // @Route GET api/items
-route.get('/', (req, res) => {
+route.get('/', auth, (req, res) => {
     Item.find()
         .sort({date: -1})
         .then(items => res.json(items));
 });
 
 // @Route POST api/items
-route.post('/', (req, res) => {
+route.post('/', auth, (req, res) => {
     const newItem = new Item({
         name: req.body.name
     });
@@ -22,7 +23,7 @@ route.post('/', (req, res) => {
 });
 
 // @Route DELETE api/items
-route.delete('/:id', (req, res) => {
+route.delete('/:id', auth, (req, res) => {
     Item.findById(req.params.id)
         .then(item => item.remove().then(() => res.json({'id': item._id})))
         .catch(err => res.status(404).json({success: false}));
