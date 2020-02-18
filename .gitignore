@@ -1,4 +1,5 @@
 PushNotification/node_modules/
 ecommerce/node_modules/
+ecommerce/config/default.json
 environment.js
 *.DS_Store

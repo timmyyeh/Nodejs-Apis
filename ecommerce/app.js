@@ -1,9 +1,16 @@
-const express = require('express');
+const express = require("express");
+const connectDB = require('./config/db');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.json('hello world');
+connectDB();
+
+app.get("/", (req, res) => {
+    res.json("hello world");
 });
 
+app.use('/api/register', require('./routes/register'));
 
-app.listen('3000', () => console.log(`server is running at port: ${process.env.PORT}`));
+const port = process.env.PORT || 3000;
+app.listen(port, () =>
+    console.log(`server is running at port: ${port}`)
+);
