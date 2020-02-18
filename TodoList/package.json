@@ -14,14 +14,14 @@
   "author": "Timmy Yeh",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^3.0.8",
     "bcryptjs": "^2.4.3",
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.19.4"
   }
 }
