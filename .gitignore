@@ -1,2 +1,4 @@
 PushNotification/node_modules/
+ecommerce/node_modules/
 environment.js
+*.DS_Store
