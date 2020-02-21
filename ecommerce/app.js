@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/register", require("./routes/register"));
+app.use("/api/login", require("./routes/login"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server is running at port: ${port}`));
